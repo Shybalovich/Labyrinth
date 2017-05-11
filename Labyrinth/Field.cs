@@ -51,13 +51,13 @@ namespace Labyrinth
             {
                 int col = rand.Next(0, fielddCell.Width);
                 int row = rand.Next(0, fielddCell.Height);
-                Rectangle tmp = new Rectangle(point.X + (thicknessObstacles + SizeCell) * col, point.Y + (thicknessObstacles + SizeCell) * row, SizeCell, SizeCell);
-                if(tmp.X == start.X && tmp.Y == start.Y || tmp.X == finish.X && tmp.Y == finish.Y)
+                if(col == 0 && row == 0 || col == 19 && row == 2)
                 {
                     continue;
                 }
                 else
                 {
+                    Rectangle tmp = new Rectangle(point.X + (thicknessObstacles + SizeCell) * col, point.Y + (thicknessObstacles + SizeCell) * row, SizeCell, SizeCell);
                     rect.Add(tmp);
                 }
             }
